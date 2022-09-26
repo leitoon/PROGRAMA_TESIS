@@ -1,5 +1,4 @@
 import cv2 
-
 cam = cv2.VideoCapture(0) #Defino el puerto de la camara, en este caso cuando se conecta al puerto 1 ya que es una camara externa
 while True:
     ret, frame = cam.read() #leo la camara
