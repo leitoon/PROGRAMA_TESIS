@@ -2,7 +2,7 @@ import cv2
 import os
 # Leemos la imagen de entrada, la mostramos e imprimimos sus dimensiones.
 #se declara varible que contien la carpeta donde se tienes las imagenes capturadas
-pathInput = "D:\\PROGRAMA_TESIS\\imagenes_procesamiento"
+pathInput = "D:\\PROGRAMA_TESIS\\imagenes_bi"
 #nombreImagenes me permite conocer el nombre de los archivos que se tienen en la carpeta de pathInput 
 nombreImagenes = os.listdir(pathInput)
 #se declara varible que contien la carpeta donde se guardaran las imagenes segmentadas

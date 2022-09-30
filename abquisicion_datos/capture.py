@@ -20,7 +20,7 @@ while True:
         break
     elif k%256 == 32:
         # Si se presiona SPACE  guarda la imagen en la ruta de path
-        path='D:\\PROGRAMA_TESIS\\imagenes_procesamiento' #Ruta donde se guardarán las fotos tomadas
+        path='D:\\PROGRAMA_TESIS\\imagenes_capturadas' #Ruta donde se guardarán las fotos tomadas
         img_name = "imagen{}.png".format(img_counter)#nombre de la imagen
         img_name=os.path.join(path,img_name)#Da dirección de todo el archivo
         cv2.imwrite(img_name, frame)#toma lo que esta viendo la camara y escribe la fotografia
