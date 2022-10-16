@@ -18,5 +18,4 @@ for i in range(len(nombreImagenes)):
     pathImagenOut = os.path.join(pathOutput,nombreImagenes[i])
     imagen = cv2.imread(pathImagen,cv2.COLOR_BGR2RGB)
     imagenbinaria=cv2.cvtColor(imagen,cv2.COLOR_RGB2GRAY)
-    #if(imagenbinaria>220):
     cv2.imwrite(pathImagenOut,imagenbinaria)

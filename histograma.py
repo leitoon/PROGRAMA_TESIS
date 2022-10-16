@@ -25,7 +25,6 @@ def histogramaRGB(imagen):
     plt.show()
 
 def histogramaGray(img):
-
     height = img.shape[0]
     width  = img.shape[1]
     #valores de histograma normalizados
@@ -33,7 +32,7 @@ def histogramaGray(img):
     hist = 1*((hist_1-np.min(hist_1))/(np.max(hist_1)-np.min(hist_1)))
     
     #valores de histograma vertical normalizados
-    profile_W= np.sum(np.transpose(img), axis=0)
+    profile_W= np.sum(img, axis=1)
     Profile_W = 1*((profile_W-np.min(profile_W))/(np.max(profile_W)-np.min(profile_W)))
     
     #valores de histograma Horizontal normalizados
@@ -44,17 +43,22 @@ def histogramaGray(img):
     ax[0,0].imshow(img,cmap='gray' )
     ax[0,0].set_title('Imagen '+ 'W: '+ str(width) + ' H: ' + str(height) )
     ax[0,0].axis('off')
-
+    
     ax[0,1].plot(hist, color ='gray' )
-    ax[0,1].set_title('Histograma')
+    ax[0,1].set_title('Overall Histogram')
+    ax[0,1].set_ylabel('Number of Pixels')
 
     ax[1,0].plot(Profile_H, color = 'gray')
-    ax[1,0].set_title('Histograma Horizontal')
-
+    ax[1,0].set_title(' Horizontal Profile')
+    ax[1,0].set_xlabel('Horizontal Axe')
+    ax[1,0].set_ylabel('Cumulative sum of grays')
+  
+    
     ax[1,1].plot(Profile_W, color = 'gray')
-    ax[1,1].set_title('Histograma Vertical')
+    ax[1,1].set_title(' Vertical Profile')
+    ax[1,1].set_xlabel('Vertical Axe')
+    ax[1,1].set_ylabel('Cumulative sum of grays')
+   
     plt.show()
-imgColor=cv2.imread('D:\\PROGRAMA_TESIS\\Recorte_imagen\\imagen0.jpg',cv2.COLOR_BGR2RGB)
-imgGray=cv2.imread('D:\\PROGRAMA_TESIS\\imagenes_bi\\imagen0.jpg')
-histogramaRGB(imgColor)
+imgGray=cv2.imread('D:\\PROGRAMA_TESIS\\imagenes_bi\\imagen10.jpg')
 histogramaGray(imgGray)

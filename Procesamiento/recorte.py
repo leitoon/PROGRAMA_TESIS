@@ -10,7 +10,6 @@ pathOutput = "D:\\PROGRAMA_TESIS\\Recorte_imagen"
 cont=0
 
 for i in range(len(nombreImagenes)):
-    
     pathImagen = os.path.join(pathInput,nombreImagenes[i])
     #pathImagenOut contiene la dirección y nombre de cada imagen contenidas que se almacenara en segmentada
     pathImagenOut = os.path.join(pathOutput,nombreImagenes[i])

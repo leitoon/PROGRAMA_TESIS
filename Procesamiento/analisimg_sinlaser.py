@@ -11,7 +11,7 @@ nombreImagenes = os.listdir(pathInput)
 pathOutput = "D:\\PROGRAMA_TESIS\\segmentada2"
 
 def verificacion_laser(img):
-    #valores de histograma Vertical normalizados
+    #valores de histograma Horizontal normalizados
     profile_H = np.sum(img, axis=0)
     Profile_H = 1*((profile_H-np.min(profile_H))/(np.max(profile_H)-np.min(profile_H)))
     DatoMax= np.max(Profile_H)
@@ -24,7 +24,6 @@ def verificacion_laser(img):
            return False
         else:
             return True
-      
 
 #Se crea ciclo for del tamaño de elementos de las imagenes_procesamiento para 
 #Que recorra todas las imagenes y haga el procesamiento
